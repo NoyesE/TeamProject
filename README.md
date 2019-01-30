@@ -1,7 +1,7 @@
 # **Coffee Team Source Control App**
-> This App will give you a dropdowns of coffee to choose from.
+> This App will give you dropdowns of coffee to choose from.
 >
-> Gives price of the coffee and add-ons
+> It will give the price of the coffee and  has add-ons
 
 ## STILL WORK IN PROGRESS
 
