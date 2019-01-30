@@ -34,7 +34,7 @@
             this.cboCoffee = new System.Windows.Forms.ComboBox();
             this.grpAddOn = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.grpAddOn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,28 +90,27 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(193, 222);
+            this.btnEdit.Location = new System.Drawing.Point(258, 206);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // txtPrice
             // 
-            this.btnDelete.Location = new System.Drawing.Point(305, 222);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.txtPrice.Enabled = false;
+            this.txtPrice.Location = new System.Drawing.Point(202, 244);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(191, 20);
+            this.txtPrice.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 286);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.grpAddOn);
             this.Controls.Add(this.cboCoffee);
@@ -120,6 +119,7 @@
             this.grpAddOn.ResumeLayout(false);
             this.grpAddOn.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,7 +131,7 @@
         private System.Windows.Forms.ComboBox cboCoffee;
         private System.Windows.Forms.GroupBox grpAddOn;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox txtPrice;
     }
 }
 
