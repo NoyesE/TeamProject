@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CoffeeDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Drink">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DrinkName" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="BaseCost" Type="smallmoney" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DrinkExtra">
+          <Key>
+            <PropertyRef Name="ExtraID" />
+          </Key>
+          <Property Name="ExtraID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product" Type="int" />
+          <Property Name="ExtraName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Cost" Type="smallmoney" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__DrinkExtr__Produ__267ABA7A">
+          <End Role="Drink" Type="Self.Drink" Multiplicity="0..1" />
+          <End Role="DrinkExtra" Type="Self.DrinkExtra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drink">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="DrinkExtra">
+              <PropertyRef Name="Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CoffeeDatabaseModelStoreContainer">
+          <EntitySet Name="Drink" EntityType="Self.Drink" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrinkExtra" EntityType="Self.DrinkExtra" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DrinkExtr__Produ__267ABA7A" Association="Self.FK__DrinkExtr__Produ__267ABA7A">
+            <End Role="Drink" EntitySet="Drink" />
+            <End Role="DrinkExtra" EntitySet="DrinkExtra" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CoffeeDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Drink">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DrinkName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BaseCost" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <NavigationProperty Name="DrinkExtra" Relationship="Self.FK__DrinkExtr__Produ__267ABA7A" FromRole="Drink" ToRole="DrinkExtra" />
+        </EntityType>
+        <EntityType Name="DrinkExtra">
+          <Key>
+            <PropertyRef Name="ExtraID" />
+          </Key>
+          <Property Name="ExtraID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product" Type="Int32" />
+          <Property Name="ExtraName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Drink" Relationship="Self.FK__DrinkExtr__Produ__267ABA7A" FromRole="DrinkExtra" ToRole="Drink" />
+        </EntityType>
+        <Association Name="FK__DrinkExtr__Produ__267ABA7A">
+          <End Role="Drink" Type="Self.Drink" Multiplicity="0..1" />
+          <End Role="DrinkExtra" Type="Self.DrinkExtra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drink">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="DrinkExtra">
+              <PropertyRef Name="Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CoffeeDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Drink" EntityType="Self.Drink" />
+          <EntitySet Name="DrinkExtra" EntityType="Self.DrinkExtra" />
+          <AssociationSet Name="FK__DrinkExtr__Produ__267ABA7A" Association="Self.FK__DrinkExtr__Produ__267ABA7A">
+            <End Role="Drink" EntitySet="Drink" />
+            <End Role="DrinkExtra" EntitySet="DrinkExtra" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CoffeeDatabaseModelStoreContainer" CdmEntityContainer="CoffeeDatabaseEntities">
+          <EntitySetMapping Name="Drink">
+            <EntityTypeMapping TypeName="CoffeeDatabaseModel.Drink">
+              <MappingFragment StoreEntitySet="Drink">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="DrinkName" ColumnName="DrinkName" />
+                <ScalarProperty Name="BaseCost" ColumnName="BaseCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrinkExtra">
+            <EntityTypeMapping TypeName="CoffeeDatabaseModel.DrinkExtra">
+              <MappingFragment StoreEntitySet="DrinkExtra">
+                <ScalarProperty Name="ExtraID" ColumnName="ExtraID" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="ExtraName" ColumnName="ExtraName" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
