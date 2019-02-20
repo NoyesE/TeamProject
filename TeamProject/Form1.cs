@@ -16,5 +16,15 @@ namespace TeamProject
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            PopluateCoffeeList();
+        }
+        public void PopluateCoffeeList()
+        {
+            //List<Coffee> coffee = CoffeeDB.GetAllCoffee();
+            throw new NotImplementedException();
+        }
     }
 }
