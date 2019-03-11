@@ -17,11 +17,14 @@ namespace TeamProject
             InitializeComponent();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            Edit edit = new Edit();
-
-            edit.Show();
+            PopluateCoffeeList();
+        }
+        public void PopluateCoffeeList()
+        {
+            //List<Coffee> coffee = CoffeeDB.GetAllCoffee();
+            throw new NotImplementedException();
         }
     }
 }

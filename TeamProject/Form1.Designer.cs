@@ -117,6 +117,7 @@
             this.Controls.Add(this.cboCoffee);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.grpAddOn.ResumeLayout(false);
             this.grpAddOn.PerformLayout();
             this.ResumeLayout(false);
