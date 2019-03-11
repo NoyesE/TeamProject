@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace TeamProject
 {
-    public partial class Form1 : Form
+    public partial class Edit : Form
     {
-        public Form1()
+        public Edit()
         {
             InitializeComponent();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnImport_Click(object sender, EventArgs e)
         {
-            Edit edit = new Edit();
 
-            edit.Show();
         }
     }
 }
