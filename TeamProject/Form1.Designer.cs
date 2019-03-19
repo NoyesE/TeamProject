@@ -36,6 +36,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.btnAddCoffee = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.grpAddOn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,11 +118,22 @@
             this.btnAddCoffee.UseVisualStyleBackColor = true;
             this.btnAddCoffee.Click += new System.EventHandler(this.btnAddCoffee_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(67, 298);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(276, 58);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Customer Add/Update/Delete";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 286);
+            this.ClientSize = new System.Drawing.Size(408, 384);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAddCoffee);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnEdit);
@@ -147,6 +159,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Button btnAddCoffee;
+        private System.Windows.Forms.Button button1;
     }
 }
 
