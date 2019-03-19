@@ -10,6 +10,33 @@ go
 use CoffeeDatabase
 go
 
+CREATE TABLE Customer
+(
+	CustomerID int   PRIMARY KEY IDENTITY
+	,DateOfBirth     date  NOT NULL
+	,FirstName varchar(30) NOT NULL
+	,LastName  varchar(35) NOT NULL
+	,DrinkName           varchar(40) NOT NULL
+)
+GO
+INSERT INTO Customer(DateOfBirth, FirstName,LastName,DrinkName)
+	VALUES('Jan 01, 1980', 'Bark', 'Sana', 'Iced Coffee')
+	,('April 12, 1987', 'Meow', 'Mina', 'Latte')
+	,('May 1, 1950', 'Beep', 'Momo', 'Coffee Milk')
+GO
+
+--CREATE TABLE Registration
+--(
+--	CustomerID int   REFERENCES Customer(CustomerID)
+--	,Product int references Drink(ProductID)
+--	,RegDate   smalldatetime    NOT NULL
+--	,PRIMARY KEY(CustomerID)
+--)
+--GO
+--INSERT INTO Registration (CustomerID, Product, RegDate)
+--VALUES(3, 'Latte', GETDATE()),(2, 'Cappuccino', GETDATE() - 7)
+--GO
+
 Create table Drink
 (
 	ProductID int Primary Key Identity

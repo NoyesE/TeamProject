@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CoffeeDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CoffeeDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="DrinkName" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
         <EntityType Name="Drink">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -22,7 +32,7 @@
           <Property Name="ExtraName" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Cost" Type="smallmoney" Nullable="false" />
         </EntityType>
-        <Association Name="FK__DrinkExtr__Produ__267ABA7A">
+        <Association Name="FK__DrinkExtr__Produ__286302EC">
           <End Role="Drink" Type="Self.Drink" Multiplicity="0..1" />
           <End Role="DrinkExtra" Type="Self.DrinkExtra" Multiplicity="*" />
           <ReferentialConstraint>
@@ -35,15 +45,15 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CoffeeDatabaseModelStoreContainer">
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drink" EntityType="Self.Drink" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DrinkExtra" EntityType="Self.DrinkExtra" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__DrinkExtr__Produ__267ABA7A" Association="Self.FK__DrinkExtr__Produ__267ABA7A">
+          <AssociationSet Name="FK__DrinkExtr__Produ__286302EC" Association="Self.FK__DrinkExtr__Produ__286302EC">
             <End Role="Drink" EntitySet="Drink" />
             <End Role="DrinkExtra" EntitySet="DrinkExtra" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CoffeeDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -85,7 +95,18 @@
             <End Role="Drink" EntitySet="Drink" />
             <End Role="DrinkExtra" EntitySet="DrinkExtra" />
           </AssociationSet>
+          <EntitySet Name="Customer" EntityType="CoffeeDatabaseModel.Customer" />
         </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="DrinkName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -108,6 +129,17 @@
                 <ScalarProperty Name="Product" ColumnName="Product" />
                 <ScalarProperty Name="ExtraName" ColumnName="ExtraName" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="CoffeeDatabaseModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="DrinkName" ColumnName="DrinkName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
