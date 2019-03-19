@@ -23,6 +23,9 @@ namespace TeamProject
         public int ProductID { get; set; }
         public string DrinkName { get; set; }
         public decimal BaseCost { get; set; }
+        public string AddOn1 { get; set; }
+        public string AddOn2 { get; set; }
+        public string AddOn3 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DrinkExtra> DrinkExtra { get; set; }

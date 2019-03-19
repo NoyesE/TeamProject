@@ -22,6 +22,9 @@
           <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DrinkName" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="BaseCost" Type="smallmoney" Nullable="false" />
+          <Property Name="AddOn1" Type="varchar" MaxLength="20" />
+          <Property Name="AddOn2" Type="varchar" MaxLength="20" />
+          <Property Name="AddOn3" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="DrinkExtra">
           <Key>
@@ -65,6 +68,9 @@
           <Property Name="DrinkName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BaseCost" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
           <NavigationProperty Name="DrinkExtra" Relationship="Self.FK__DrinkExtr__Produ__267ABA7A" FromRole="Drink" ToRole="DrinkExtra" />
+          <Property Name="AddOn1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AddOn2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AddOn3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="DrinkExtra">
           <Key>
@@ -116,6 +122,9 @@
           <EntitySetMapping Name="Drink">
             <EntityTypeMapping TypeName="CoffeeDatabaseModel.Drink">
               <MappingFragment StoreEntitySet="Drink">
+                <ScalarProperty Name="AddOn3" ColumnName="AddOn3" />
+                <ScalarProperty Name="AddOn2" ColumnName="AddOn2" />
+                <ScalarProperty Name="AddOn1" ColumnName="AddOn1" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="DrinkName" ColumnName="DrinkName" />
                 <ScalarProperty Name="BaseCost" ColumnName="BaseCost" />

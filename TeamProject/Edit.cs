@@ -68,11 +68,18 @@ namespace TeamProject
 
         private void btnSaveCoffee_Click(object sender, EventArgs e)
         {
-
+            Drink drink = new Drink;
         }
 
         private void cmbCoffee_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Drink drink = (Drink)cmbCoffee.SelectedItem;
+             
+
+            txtCost.Text = drink.BaseCost.ToString();
+            txtAdd1.Text = drink.AddOn1;
+            txtAdd1.Text = drink.AddOn2;
+            txtAdd1.Text = drink.AddOn3;
 
         }
 
