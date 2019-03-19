@@ -25,14 +25,26 @@ namespace TeamProject
         }
         public void PopluateCoffeeList()
         {
-            //List<Coffee> coffee = CoffeeDB.GetAllCoffee();
+            List<Drink> coffee = CoffeeDb.GetAllCoffee();
             //throw new NotImplementedException();
+            cboCoffee.DataSource = coffee;
+            cboCoffee.DisplayMember = nameof(Drink.DrinkName);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Edit edit = new Edit();
             edit.Show();
+        }
+
+        private void btnAddCoffee_Click(object sender, EventArgs e)
+        {
+            Drink d = new Drink();
+            d.DrinkName = "Espresso";
+            d.BaseCost = 7;
+
+            CoffeeDb.AddCoffee(d);
+            MessageBox.Show("Coffee Added!");
         }
     }
     public static class Encrypt

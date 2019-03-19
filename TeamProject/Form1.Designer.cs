@@ -35,6 +35,7 @@
             this.grpAddOn = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
+            this.btnAddCoffee = new System.Windows.Forms.Button();
             this.grpAddOn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,11 +107,22 @@
             this.txtPrice.Size = new System.Drawing.Size(191, 20);
             this.txtPrice.TabIndex = 7;
             // 
+            // btnAddCoffee
+            // 
+            this.btnAddCoffee.Location = new System.Drawing.Point(41, 227);
+            this.btnAddCoffee.Name = "btnAddCoffee";
+            this.btnAddCoffee.Size = new System.Drawing.Size(121, 37);
+            this.btnAddCoffee.TabIndex = 8;
+            this.btnAddCoffee.Text = "Add Coffee";
+            this.btnAddCoffee.UseVisualStyleBackColor = true;
+            this.btnAddCoffee.Click += new System.EventHandler(this.btnAddCoffee_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 286);
+            this.Controls.Add(this.btnAddCoffee);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.grpAddOn);
@@ -134,6 +146,7 @@
         private System.Windows.Forms.GroupBox grpAddOn;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Button btnAddCoffee;
     }
 }
 
