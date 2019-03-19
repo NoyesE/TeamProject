@@ -71,6 +71,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoffeeDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>CoffeeDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Drink.cs">
       <DependentUpon>CoffeeDBModel.tt</DependentUpon>
     </Compile>

@@ -27,5 +27,6 @@ namespace TeamProject
     
         public virtual DbSet<Drink> Drink { get; set; }
         public virtual DbSet<DrinkExtra> DrinkExtra { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
     }
 }
