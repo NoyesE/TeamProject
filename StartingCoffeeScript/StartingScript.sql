@@ -42,6 +42,9 @@ Create table Drink
 	ProductID int Primary Key Identity
 	,DrinkName varchar(40) Unique not null
 	,BaseCost smallmoney not null
+	,AddOn1 varchar(20)
+	,AddOn2 varchar(20)
+	,AddOn3 varchar(20)
 )
 Go
 
