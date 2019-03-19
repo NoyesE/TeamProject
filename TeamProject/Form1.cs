@@ -47,6 +47,26 @@ namespace TeamProject
             edit.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Customer newCust = new Customer()
+            {
+                FirstName = "Candy",
+                LastName = "Something",
+                DateOfBirth = new DateTime(1980, 1, 1),
+                DrinkName = "Iced Coffee"
+            };
+
+            newCust = CustomerDb.AddCustomer(newCust);
+            MessageBox.Show("Customer added!");
+
+            newCust.FirstName = "Jim";
+            CustomerDb.Update(newCust);
+            MessageBox.Show("Customer Updated!");
+
+            CustomerDb.DeleteCustomer(newCust);
+            MessageBox.Show("Customer deleted!");
+        }
     }
     public static class Encrypt
     {

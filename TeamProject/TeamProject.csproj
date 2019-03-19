@@ -74,6 +74,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>CoffeeDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerDb.cs" />
     <Compile Include="Drink.cs">
       <DependentUpon>CoffeeDBModel.tt</DependentUpon>
     </Compile>
