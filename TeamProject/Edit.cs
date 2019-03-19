@@ -65,5 +65,28 @@ namespace TeamProject
 
             
         }
+
+        private void btnSaveCoffee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCoffee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Edit_Load(object sender, EventArgs e)
+        {
+            PopulateCoffeeList();
+        }
+
+        private void PopulateCoffeeList()
+        {
+            List<Drink> drink = CoffeeDb.GetAllCoffee();
+
+            cmbCoffee.DataSource = drink;
+            cmbCoffee.DisplayMember = nameof(Drink.DrinkName);
+        }
     }
 }

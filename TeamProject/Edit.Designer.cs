@@ -33,7 +33,6 @@
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtCoffee = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAdd1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,9 @@
             this.txtAdd3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSaveCoffee = new System.Windows.Forms.Button();
+            this.txtCost = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbCoffee = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtField
@@ -91,13 +93,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // txtCoffee
-            // 
-            this.txtCoffee.Location = new System.Drawing.Point(70, 40);
-            this.txtCoffee.Name = "txtCoffee";
-            this.txtCoffee.Size = new System.Drawing.Size(184, 20);
-            this.txtCoffee.TabIndex = 5;
             // 
             // label1
             // 
@@ -158,18 +153,47 @@
             // 
             // btnSaveCoffee
             // 
-            this.btnSaveCoffee.Location = new System.Drawing.Point(70, 89);
+            this.btnSaveCoffee.Location = new System.Drawing.Point(70, 93);
             this.btnSaveCoffee.Name = "btnSaveCoffee";
             this.btnSaveCoffee.Size = new System.Drawing.Size(75, 23);
             this.btnSaveCoffee.TabIndex = 13;
             this.btnSaveCoffee.Text = "Save Coffee";
             this.btnSaveCoffee.UseVisualStyleBackColor = true;
+            this.btnSaveCoffee.Click += new System.EventHandler(this.btnSaveCoffee_Click);
+            // 
+            // txtCost
+            // 
+            this.txtCost.Location = new System.Drawing.Point(162, 93);
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(100, 20);
+            this.txtCost.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(162, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Base Cost";
+            // 
+            // cmbCoffee
+            // 
+            this.cmbCoffee.FormattingEnabled = true;
+            this.cmbCoffee.Location = new System.Drawing.Point(70, 40);
+            this.cmbCoffee.Name = "cmbCoffee";
+            this.cmbCoffee.Size = new System.Drawing.Size(192, 21);
+            this.cmbCoffee.TabIndex = 16;
+            this.cmbCoffee.SelectedIndexChanged += new System.EventHandler(this.cmbCoffee_SelectedIndexChanged);
             // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbCoffee);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtCost);
             this.Controls.Add(this.btnSaveCoffee);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtAdd3);
@@ -178,7 +202,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAdd1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCoffee);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
@@ -186,6 +209,7 @@
             this.Controls.Add(this.txtField);
             this.Name = "Edit";
             this.Text = "Edit";
+            this.Load += new System.EventHandler(this.Edit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,7 +222,6 @@
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtCoffee;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAdd1;
         private System.Windows.Forms.Label label2;
@@ -207,5 +230,8 @@
         private System.Windows.Forms.TextBox txtAdd3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSaveCoffee;
+        private System.Windows.Forms.TextBox txtCost;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbCoffee;
     }
 }
