@@ -77,6 +77,7 @@
             this.cboCoffee.Name = "cboCoffee";
             this.cboCoffee.Size = new System.Drawing.Size(121, 21);
             this.cboCoffee.TabIndex = 3;
+            this.cboCoffee.SelectedIndexChanged += new System.EventHandler(this.cboCoffee_SelectedIndexChanged);
             // 
             // grpAddOn
             // 

@@ -68,7 +68,32 @@ namespace TeamProject
 
         private void btnSaveCoffee_Click(object sender, EventArgs e)
         {
-            Drink drink = new Drink;
+            
+            Drink drink = (Drink)cmbCoffee.SelectedItem;
+            if(drink == null)
+            {
+                Drink newDrink = new Drink();
+                newDrink.DrinkName = cmbCoffee.Text;
+                newDrink.BaseCost = Convert.ToDecimal(txtCost.Text);
+                newDrink.AddOn1 = txtAdd1.Text;
+                newDrink.AddOn2 = txtAdd2.Text;
+                newDrink.AddOn3 = txtAdd3.Text;
+                CoffeeDb.AddCoffee(newDrink);
+                MessageBox.Show("Coffee Added");
+            }
+
+            else
+            {
+                drink.DrinkName = cmbCoffee.Text;
+                drink.BaseCost = Convert.ToDecimal(txtCost.Text);
+                drink.AddOn1 = txtAdd1.Text;
+                drink.AddOn2 = txtAdd2.Text;
+                drink.AddOn3 = txtAdd3.Text;
+                CoffeeDb.Update(drink);
+                MessageBox.Show("Coffee Updated");
+            }
+            
+            
         }
 
         private void cmbCoffee_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,8 +103,8 @@ namespace TeamProject
 
             txtCost.Text = drink.BaseCost.ToString();
             txtAdd1.Text = drink.AddOn1;
-            txtAdd1.Text = drink.AddOn2;
-            txtAdd1.Text = drink.AddOn3;
+            txtAdd2.Text = drink.AddOn2;
+            txtAdd3.Text = drink.AddOn3;
 
         }
 

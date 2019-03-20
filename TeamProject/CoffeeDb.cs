@@ -10,19 +10,36 @@ namespace TeamProject
     {
         public static List<Drink> GetAllCoffee()
         {
-            CoffeeDatabaseEntities context = new CoffeeDatabaseEntities();
+            using (CoffeeDatabaseEntities context = new CoffeeDatabaseEntities())
+            {
 
-            List<Drink> allCoffee =
+                List<Drink> allCoffee =
                 context.Drink.ToList();
-            return allCoffee;
+                return allCoffee;
+            }
         }
 
         public static void AddCoffee(Drink d)
         {
-            CoffeeDatabaseEntities context = new CoffeeDatabaseEntities();
+            using (CoffeeDatabaseEntities context = new CoffeeDatabaseEntities())
+            {
 
-            context.Drink.Add(d);
-            context.SaveChanges();
+                context.Drink.Add(d);
+                context.SaveChanges();
+            }
+        }
+
+        public static void Update(Drink d)
+        {
+            using (CoffeeDatabaseEntities context = new CoffeeDatabaseEntities())
+            {
+                context.Entry(d).State = System.Data.Entity.EntityState.Detached;
+                context.Drink.Add(d);
+                context.Entry(d).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
+                
+            
         }
     }
 }

@@ -67,6 +67,11 @@ namespace TeamProject
             CustomerDb.DeleteCustomer(newCust);
             MessageBox.Show("Customer deleted!");
         }
+
+        private void cboCoffee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     public static class Encrypt
     {
