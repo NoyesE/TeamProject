@@ -26,9 +26,19 @@ namespace TeamProject
         public void PopluateCoffeeList()
         {
             List<Drink> coffee = CoffeeDb.GetAllCoffee();
+
             //throw new NotImplementedException();
             cboCoffee.DataSource = coffee;
             cboCoffee.DisplayMember = nameof(Drink.DrinkName);
+            chkPopulate();
+        }
+
+        private void chkPopulate()
+        {
+            Drink drink = (Drink)cboCoffee.SelectedItem;
+            chk1.Text = drink.AddOn1;
+            chk2.Text = drink.AddOn2;
+            chk3.Text = drink.AddOn3;
         }
 
         private void btnAddCoffee_Click(object sender, EventArgs e)
@@ -70,7 +80,7 @@ namespace TeamProject
 
         private void cboCoffee_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            chkPopulate();
         }
     }
     public static class Encrypt
