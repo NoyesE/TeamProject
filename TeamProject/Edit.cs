@@ -14,8 +14,10 @@ namespace TeamProject
 {
     public partial class Edit : Form
     {
-        public Edit()
+        private Form1 form1;
+        public Edit(Form1 form1)
         {
+            this.form1 = form1;
             InitializeComponent();
         }
 
@@ -119,6 +121,11 @@ namespace TeamProject
 
             cmbCoffee.DataSource = drink;
             cmbCoffee.DisplayMember = nameof(Drink.DrinkName);
+        }
+
+        private void Edit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form1.PopluateCoffeeList();
         }
     }
 }
