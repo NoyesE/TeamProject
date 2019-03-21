@@ -127,5 +127,15 @@ namespace TeamProject
         {
             form1.PopluateCoffeeList();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cmbCoffee.Text = "";
+            txtCost.Text = "";
+            txtAdd1.Text = "";
+            txtAdd2.Text = "";
+            txtAdd3.Text = "";
+            cmbCoffee.Focus();
+        }
     }
 }
