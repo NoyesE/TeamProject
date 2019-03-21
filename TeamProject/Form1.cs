@@ -92,6 +92,30 @@ namespace TeamProject
         {
             PopluateCoffeeList();
         }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            decimal tax = 1.1m;
+            Drink drink = (Drink)cboCoffee.SelectedItem;
+            decimal salesTotal = 0;
+            salesTotal += drink.BaseCost;
+            if (chk1.Checked)
+            {
+                salesTotal += .5m;
+            }
+            if (chk2.Checked)
+            {
+                salesTotal += .5m;
+            }
+            if (chk3.Checked)
+            {
+                salesTotal += .5m;
+            }
+            salesTotal = salesTotal * tax;
+            txtTotal.Text = salesTotal.ToString();
+        }
+
+        
     }
     public static class Encrypt
     {

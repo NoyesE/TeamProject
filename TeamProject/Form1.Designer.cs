@@ -37,6 +37,10 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.btnAddCoffee = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnTotal = new System.Windows.Forms.Button();
+            this.txtTax = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grpAddOn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,11 +133,51 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(41, 164);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.TabIndex = 11;
+            // 
+            // btnTotal
+            // 
+            this.btnTotal.Location = new System.Drawing.Point(41, 135);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(75, 23);
+            this.btnTotal.TabIndex = 12;
+            this.btnTotal.Text = "Total";
+            this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
+            // 
+            // txtTax
+            // 
+            this.txtTax.Location = new System.Drawing.Point(41, 102);
+            this.txtTax.Name = "txtTax";
+            this.txtTax.ReadOnly = true;
+            this.txtTax.Size = new System.Drawing.Size(100, 20);
+            this.txtTax.TabIndex = 13;
+            this.txtTax.Text = "10%";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Tax";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 384);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtTax);
+            this.Controls.Add(this.btnTotal);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAddCoffee);
             this.Controls.Add(this.txtPrice);
@@ -162,6 +206,10 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Button btnAddCoffee;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Button btnTotal;
+        private System.Windows.Forms.TextBox txtTax;
+        private System.Windows.Forms.Label label1;
     }
 }
 
